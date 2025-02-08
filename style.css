@@ -1,0 +1,83 @@
+/* Import a new font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&display=swap');
+
+body {
+    font-family: 'Pacifico', cursive; /* New font for the body */
+    text-align: center;
+    margin: 0;
+    background-color: #FADADD;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#image-container {
+    /* This container will hold the images */
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#question {
+    font-family: 'Dancing Script', cursive; /* New font for the question */
+    font-size: 52px;
+    animation: heartbeat 1.5s infinite;
+}
+
+#options {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 26px;
+    font-family: 'Pacifico', cursive; /* New font for the buttons */
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners for buttons */
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    transform: scale(1.1); /* Slightly enlarge buttons on hover */
+}
+
+#love-message {
+    font-family: 'Dancing Script', cursive; /* New font for the love message */
+    font-size: 48px;
+    color: #FB607F;
+    margin-top: 20px;
+    display: none; /* Hide the message initially */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Heart explosion effect */
+@keyframes heartExplosion {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+    animation: heartExplosion 1s ease-out;
+}
